@@ -1,6 +1,8 @@
+import br.com.screenmatch.calculo.FiltroRecomendacao;
 import br.com.screenmatch.calculo.calcTempo;
+import br.com.screenmatch.modelos.Episodio;
 import br.com.screenmatch.modelos.filme;
-import br.com.screenmatch.modelos.serie;
+import br.com.screenmatch.modelos.Serie;
 
 
 public class principal {
@@ -23,21 +25,30 @@ public class principal {
         outro.setIncluidoNoPlano(true);
 
 
-        serie minhaSerie = new serie();
-        minhaSerie.exibeFichaTecnica();
-        minhaSerie.setNome("Dexter");
-        minhaSerie.setTemporadas(8);
-        minhaSerie.setEpisodiosPorTemporada(12);
-        minhaSerie.setMinutosPorEpisodio(50);
-        minhaSerie.setAnoDeLancamento(2007);
-        minhaSerie.setIncluidoNoPlano(true);
+        Serie Dexter = new Serie();
+        Dexter.exibeFichaTecnica();
+        Dexter.setNome("Dexter");
+        Dexter.setTemporadas(8);
+        Dexter.setEpisodiosPorTemporada(12);
+        Dexter.setMinutosPorEpisodio(50);
+        Dexter.setAnoDeLancamento(2007);
+        Dexter.setIncluidoNoPlano(true);
 
 
         calcTempo calcula = new calcTempo();
         calcula.inclui(meuFilme);
         calcula.inclui(outro);
-        calcula.inclui(minhaSerie);
+        calcula.inclui(Dexter);
 
         System.out.println("Tempo total: " + calcula.getTempoTotal());
+
+        FiltroRecomendacao filtro = new FiltroRecomendacao();
+        filtro.filtra(meuFilme);
+
+        Episodio episodio = new Episodio();
+        episodio.setNumero(1);
+        episodio.setSerie(Dexter);
+        episodio.setTotalVisualisacoes(300);
+        filtro.filtra(episodio);
     }
 }

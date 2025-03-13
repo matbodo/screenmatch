@@ -1,6 +1,6 @@
 package br.com.screenmatch.modelos;
 
-public class serie extends titulo{
+public class Serie extends titulo{
     private int temporadas;
     private int episodiosPorTemporada;
     private int minutosPorEpisodio;
@@ -37,6 +37,7 @@ public class serie extends titulo{
     public void setAtiva(boolean ativa) {
         this.ativa = ativa;
     }
+
 
     @Override
     public int getDuracaoMinutos() {
