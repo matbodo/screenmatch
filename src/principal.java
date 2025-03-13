@@ -1,4 +1,7 @@
+import br.com.screenmatch.calculo.calcTempo;
 import br.com.screenmatch.modelos.filme;
+import br.com.screenmatch.modelos.serie;
+
 
 public class principal {
     public static void main(String[] args) {
@@ -13,7 +16,28 @@ public class principal {
         meuFilme.avaliacoes(5);
         meuFilme.avaliacoes(7);
 
-        System.out.println("Média de avaliações do filme: " +meuFilme.pegaMedia());
+        filme outro = new filme();
+        outro.setNome("Jhon Wick");
+        outro.setAnoDeLancamento(2014);
+        outro.setDuracaoMinutos(101);
+        outro.setIncluidoNoPlano(true);
 
+
+        serie minhaSerie = new serie();
+        minhaSerie.exibeFichaTecnica();
+        minhaSerie.setNome("Dexter");
+        minhaSerie.setTemporadas(8);
+        minhaSerie.setEpisodiosPorTemporada(12);
+        minhaSerie.setMinutosPorEpisodio(50);
+        minhaSerie.setAnoDeLancamento(2007);
+        minhaSerie.setIncluidoNoPlano(true);
+
+
+        calcTempo calcula = new calcTempo();
+        calcula.inclui(meuFilme);
+        calcula.inclui(outro);
+        calcula.inclui(minhaSerie);
+
+        System.out.println("Tempo total: " + calcula.getTempoTotal());
     }
 }
