@@ -4,6 +4,8 @@ import br.com.screenmatch.modelos.Episodio;
 import br.com.screenmatch.modelos.filme;
 import br.com.screenmatch.modelos.Serie;
 
+import java.util.ArrayList;
+
 
 public class principal {
     public static void main(String[] args) {
@@ -13,20 +15,29 @@ public class principal {
         meuFilme.setDuracaoMinutos(154);
         meuFilme.setIncluidoNoPlano(true);
 
-        meuFilme.exibeFichaTecnica();
-        meuFilme.avaliacoes(8);
-        meuFilme.avaliacoes(5);
-        meuFilme.avaliacoes(7);
-
         filme outro = new filme();
         outro.setNome("Jhon Wick");
         outro.setAnoDeLancamento(2014);
         outro.setDuracaoMinutos(101);
         outro.setIncluidoNoPlano(true);
 
+        var filmeMatheus = new filme();
+        filmeMatheus.setNome("War Dogs");
+        filmeMatheus.setDuracaoMinutos(200);
+        filmeMatheus.setAnoDeLancamento(2016);
+        filmeMatheus.setIncluidoNoPlano(true);
+
+        ArrayList<filme> listaDeFilmes = new ArrayList<>();
+        listaDeFilmes.add(filmeMatheus);
+        listaDeFilmes.add(meuFilme);
+        listaDeFilmes.add(outro);
+
+        System.out.println("Tamanho da lista: " + listaDeFilmes.size());
+        System.out.println("Primeiro Filme: " + listaDeFilmes.getFirst().getNome());
+        System.out.println("toString do filme: " + listaDeFilmes.get(0).toString());
+
 
         Serie Dexter = new Serie();
-        Dexter.exibeFichaTecnica();
         Dexter.setNome("Dexter");
         Dexter.setTemporadas(8);
         Dexter.setEpisodiosPorTemporada(12);
@@ -34,13 +45,10 @@ public class principal {
         Dexter.setAnoDeLancamento(2007);
         Dexter.setIncluidoNoPlano(true);
 
-
         calcTempo calcula = new calcTempo();
         calcula.inclui(meuFilme);
         calcula.inclui(outro);
         calcula.inclui(Dexter);
-
-        System.out.println("Tempo total: " + calcula.getTempoTotal());
 
         FiltroRecomendacao filtro = new FiltroRecomendacao();
         filtro.filtra(meuFilme);
