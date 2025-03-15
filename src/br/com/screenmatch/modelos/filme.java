@@ -5,6 +5,10 @@ import br.com.screenmatch.calculo.Classificavel;
 public class filme extends titulo implements Classificavel {
     private String diretor;
 
+    public filme(String nome, int anoDeLancamento) {
+        super(nome, anoDeLancamento);
+    }
+
     public String getDiretor() {
         return diretor;
     }

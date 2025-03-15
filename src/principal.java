@@ -9,22 +9,16 @@ import java.util.ArrayList;
 
 public class principal {
     public static void main(String[] args) {
-        filme meuFilme = new filme();
-        meuFilme.setNome("Pulp Fiction");
-        meuFilme.setAnoDeLancamento(1994);
+        filme meuFilme = new filme("Pulp Fiction", 1994);
         meuFilme.setDuracaoMinutos(154);
         meuFilme.setIncluidoNoPlano(true);
 
-        filme outro = new filme();
-        outro.setNome("Jhon Wick");
-        outro.setAnoDeLancamento(2014);
+        filme outro = new filme("Jhon Wick", 2014);
         outro.setDuracaoMinutos(101);
         outro.setIncluidoNoPlano(true);
 
-        var filmeMatheus = new filme();
-        filmeMatheus.setNome("War Dogs");
+        var filmeMatheus = new filme("War Dogs", 2016);
         filmeMatheus.setDuracaoMinutos(200);
-        filmeMatheus.setAnoDeLancamento(2016);
         filmeMatheus.setIncluidoNoPlano(true);
 
         ArrayList<filme> listaDeFilmes = new ArrayList<>();
@@ -37,8 +31,7 @@ public class principal {
         System.out.println("toString do filme: " + listaDeFilmes.get(0).toString());
 
 
-        Serie Dexter = new Serie();
-        Dexter.setNome("Dexter");
+        Serie Dexter = new Serie("Dexter", 2007);
         Dexter.setTemporadas(8);
         Dexter.setEpisodiosPorTemporada(12);
         Dexter.setMinutosPorEpisodio(50);
