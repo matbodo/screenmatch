@@ -1,5 +1,5 @@
 package br.com.screenmatch.calculo;
-import br.com.screenmatch.modelos.titulo;
+import br.com.screenmatch.modelos.Titulo;
 
 public class calcTempo {
     private int tempoTotal;
@@ -8,7 +8,7 @@ public class calcTempo {
         return tempoTotal;
     }
 
-    public void inclui(titulo t){
+    public void inclui(Titulo t){
         this.tempoTotal += t.getDuracaoMinutos();
     }
 }

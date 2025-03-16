@@ -1,6 +1,6 @@
 package br.com.screenmatch.modelos;
 
-public class Serie extends titulo{
+public class Serie extends Titulo {
     private int temporadas;
     private int episodiosPorTemporada;
     private int minutosPorEpisodio;
@@ -46,5 +46,10 @@ public class Serie extends titulo{
     @Override
     public int getDuracaoMinutos() {
         return temporadas * episodiosPorTemporada * minutosPorEpisodio;
+    }
+
+    @Override
+    public String toString() {
+        return "Serie: " + this.getNome() + " (" + this.getAnoDeLancamento() + ")";
     }
 }
