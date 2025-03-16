@@ -1,7 +1,9 @@
+package br.com.screenmatch.principal;
+
 import br.com.screenmatch.calculo.FiltroRecomendacao;
 import br.com.screenmatch.calculo.calcTempo;
 import br.com.screenmatch.modelos.Episodio;
-import br.com.screenmatch.modelos.filme;
+import br.com.screenmatch.modelos.Filme;
 import br.com.screenmatch.modelos.Serie;
 
 import java.util.ArrayList;
@@ -9,19 +11,19 @@ import java.util.ArrayList;
 
 public class principal {
     public static void main(String[] args) {
-        filme meuFilme = new filme("Pulp Fiction", 1994);
+        Filme meuFilme = new Filme("Pulp Fiction", 1994);
         meuFilme.setDuracaoMinutos(154);
         meuFilme.setIncluidoNoPlano(true);
 
-        filme outro = new filme("Jhon Wick", 2014);
+        Filme outro = new Filme("Jhon Wick", 2014);
         outro.setDuracaoMinutos(101);
         outro.setIncluidoNoPlano(true);
 
-        var filmeMatheus = new filme("War Dogs", 2016);
+        var filmeMatheus = new Filme("War Dogs", 2016);
         filmeMatheus.setDuracaoMinutos(200);
         filmeMatheus.setIncluidoNoPlano(true);
 
-        ArrayList<filme> listaDeFilmes = new ArrayList<>();
+        ArrayList<Filme> listaDeFilmes = new ArrayList<>();
         listaDeFilmes.add(filmeMatheus);
         listaDeFilmes.add(meuFilme);
         listaDeFilmes.add(outro);

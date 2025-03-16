@@ -2,10 +2,10 @@ package br.com.screenmatch.modelos;
 
 import br.com.screenmatch.calculo.Classificavel;
 
-public class filme extends titulo implements Classificavel {
+public class Filme extends titulo implements Classificavel {
     private String diretor;
 
-    public filme(String nome, int anoDeLancamento) {
+    public Filme(String nome, int anoDeLancamento) {
         super(nome, anoDeLancamento);
     }
 
