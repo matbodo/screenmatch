@@ -30,7 +30,7 @@ public class principal {
 
         System.out.println("Tamanho da lista: " + listaDeFilmes.size());
         System.out.println("Primeiro Filme: " + listaDeFilmes.getFirst().getNome());
-        System.out.println("toString do filme: " + listaDeFilmes.get(0).toString());
+        System.out.println("toString do filme: " + listaDeFilmes.getFirst().toString());
 
 
         Serie Dexter = new Serie("Dexter", 2007);
