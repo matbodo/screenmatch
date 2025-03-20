@@ -36,9 +36,15 @@ public class PrincipalComBusca {
                 .create();;
         TituloOMDB meuTituloOMDB = gson.fromJson(json, TituloOMDB.class);
         System.out.println(meuTituloOMDB);
+
+        try {
         Titulo meuTitulo = new Titulo(meuTituloOMDB);
         System.out.println("Titulo ja convertido: ");
         System.out.println(meuTitulo);
+        } catch (NumberFormatException e){
+            System.out.println("Erro: ");
+            System.out.println(e.getMessage());
+        }
 
     }
 }
