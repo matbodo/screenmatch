@@ -1,12 +1,11 @@
 package br.com.screenmatch.modelos;
 
+import br.com.screenmatch.exception.ErroDeConversaoDeAnoException;
 import com.google.gson.annotations.SerializedName;
 
 public class Titulo implements Comparable<Titulo>{
 
-    @SerializedName("Tittle")
     private String nome;
-    @SerializedName("Year")
     private int anoDeLancamento;
     private boolean incluidoNoPlano;
     private double somaAvaliacoes;
@@ -20,6 +19,9 @@ public class Titulo implements Comparable<Titulo>{
 
     public Titulo(TituloOMDB meuTituloOMDB) {
         this.nome = meuTituloOMDB.title();
+        if (meuTituloOMDB.year().length() > 4){
+            throw new ErroDeConversaoDeAnoException("Erro na conversao com mais de 4 caracteres");
+        }
         this.anoDeLancamento = Integer.valueOf(meuTituloOMDB.year());
         this.duracaoMinutos = Integer.valueOf(meuTituloOMDB.runtime().substring(0,2));
     }

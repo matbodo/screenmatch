@@ -1,5 +1,6 @@
 package br.com.screenmatch.principal;
 
+import br.com.screenmatch.exception.ErroDeConversaoDeAnoException;
 import br.com.screenmatch.modelos.Titulo;
 import br.com.screenmatch.modelos.TituloOMDB;
 import com.google.gson.FieldNamingPolicy;
@@ -21,7 +22,7 @@ public class PrincipalComBusca {
         var busca = leitura.nextLine();
 
         String tituloCodificado = URLEncoder.encode(busca, "UTF-8");
-        String endereco = "http://www.omdbapi.com/?t=" + tituloCodificado + "&apikey=1ed12d1f";
+        String endereco = "http://www.omdbapi.com/?t=" + tituloCodificado.replace(" ", "+") + "&apikey=1ed12d1f";
 
         try {
             HttpClient client = HttpClient.newHttpClient();
@@ -47,6 +48,10 @@ public class PrincipalComBusca {
         } catch (NumberFormatException e){
             System.out.println("Erro: ");
             System.out.println(e.getMessage());
+        } catch (IllegalArgumentException e){
+            System.out.println("Erro na busca: ");
+        } catch (ErroDeConversaoDeAnoException e){
+            System.out.println(e.getMensagem());
         }
         System.out.println("Finalizado com sucesso");
     }
